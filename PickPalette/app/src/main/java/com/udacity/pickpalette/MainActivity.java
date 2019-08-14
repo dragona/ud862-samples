@@ -40,20 +40,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
 
 public class MainActivity extends Activity {
 
-    @InjectView(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
     SwatchAdapter swatchAdapter;
-    @InjectView(R.id.grid_view)
+    @BindView(R.id.grid_view)
     GridView gridView;
-    @InjectView(R.id.tool_bar)
+    @BindView(R.id.tool_bar)
     Toolbar toolbar;
-    @InjectView(R.id.imageView)
+    @BindView(R.id.imageView)
     ImageView imageView;
     int numPixels;
 
@@ -63,9 +63,10 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.activity_main);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
-        toolbar.setTitle(getString(R.string.app_name));
+
+//        toolbar.setTitle(getString(R.string.app_name));
 
     }
 
@@ -112,7 +113,8 @@ public class MainActivity extends Activity {
         try {
             if (object instanceof Uri) {
                 Uri imageUri = (Uri) object;
-                Picasso.with(this).load(imageUri).into(imageView);
+                //todo : confirm whether passing the context is still needed
+                Picasso.get().load(imageUri).into(imageView);
                 InputStream imageStream = getContentResolver().openInputStream(imageUri);
                 bitmap = BitmapFactory.decodeStream(imageStream);
             } else {

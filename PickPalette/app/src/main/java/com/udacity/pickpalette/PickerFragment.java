@@ -32,7 +32,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class PickerFragment extends DialogFragment {
@@ -40,15 +40,15 @@ public class PickerFragment extends DialogFragment {
     private static final int PICK_PHOTO = 100;
     private static final int TAKE_PHOTO = 101;
 
-    @InjectView(R.id.pickImage)Button pickImage;
-    @InjectView(R.id.takeImage)Button takeImage;
+    @BindView(R.id.pickImage)Button pickImage;
+    @BindView(R.id.takeImage)Button takeImage;
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_picker, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 
