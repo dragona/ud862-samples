@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
 
         ButterKnife.bind(this);
 
-
+        //TODO: need to fix
 //        toolbar.setTitle(getString(R.string.app_name));
 
     }
@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
         try {
             if (object instanceof Uri) {
                 Uri imageUri = (Uri) object;
-                //todo : confirm whether passing the context is still needed
+                //TODO : confirm whether passing the context is still needed
                 Picasso.get().load(imageUri).into(imageView);
                 InputStream imageStream = getContentResolver().openInputStream(imageUri);
                 bitmap = BitmapFactory.decodeStream(imageStream);
