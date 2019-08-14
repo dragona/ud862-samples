@@ -26,17 +26,17 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
 
-    @InjectView(R.id.display4)
+    @BindView(R.id.display4)
     TextView display4View;
 
-    @InjectView(R.id.headline)
+    @BindView(R.id.headline)
     TextView headlineView;
 
     Typeface courgette;
@@ -49,7 +49,7 @@ public class MainActivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_main, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         /*
         display4View = (TextView)getActivity().findViewById(R.id.display4);
         headlineView = (TextView)getActivity().findViewById(R.id.headline);
