@@ -15,39 +15,36 @@
  */
 package com.udacity.immersiveimages;
 
-import android.app.Activity;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.GridLayout;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import android.graphics.Matrix;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 import static android.widget.ImageView.*;
 
 public class MainActivity extends AppCompatActivity {
-    @InjectView(R.id.imageView) ImageView imageView;
+    @BindView(R.id.imageView) ImageView imageView;
 
     // Radio Buttons
-    @InjectView(R.id.noneBtn) RadioButton noneBtn;
-    @InjectView(R.id.centerBtn) RadioButton centerBtn;
-    @InjectView(R.id.centerCropBtn) RadioButton centerCropBtn;
-    @InjectView(R.id.centerInsideBtn) RadioButton centerInsideBtn;
-    @InjectView(R.id.fitCenterBtn) RadioButton fitCenterBtn;
-    @InjectView(R.id.fitEndBtn) RadioButton fitEndBtn;
-    @InjectView(R.id.fitStartBtn) RadioButton fitStartBtn;
-    @InjectView(R.id.fitXYBtn) RadioButton fitXYBtn;
-    @InjectView(R.id.matrixBtn) RadioButton matrixBtn;
+    @BindView(R.id.noneBtn) RadioButton noneBtn;
+    @BindView(R.id.centerBtn) RadioButton centerBtn;
+    @BindView(R.id.centerCropBtn) RadioButton centerCropBtn;
+    @BindView(R.id.centerInsideBtn) RadioButton centerInsideBtn;
+    @BindView(R.id.fitCenterBtn) RadioButton fitCenterBtn;
+    @BindView(R.id.fitEndBtn) RadioButton fitEndBtn;
+    @BindView(R.id.fitStartBtn) RadioButton fitStartBtn;
+    @BindView(R.id.fitXYBtn) RadioButton fitXYBtn;
+    @BindView(R.id.matrixBtn) RadioButton matrixBtn;
 
     Matrix matrix;
 
@@ -56,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         fitCenterBtn.setChecked(true);
         matrix = new Matrix();
