@@ -1,4 +1,4 @@
-# Floating action button - Udacity demo updated
+# Dynamic Surfaces - Udacity demo updated
 
 This project is based on the Udacity demo, and the following are the main updates that were added:
 
@@ -7,4 +7,4 @@ This project is based on the Udacity demo, and the following are the main update
 * Using ```implementation 'com.google.android.material:material:1.1.0-alpha09'```
 * The different implementations of FABs are all showing and re-organized 
 
-![FAB android app 2019](fab.gif)
+![FAB android app 2019](dynamic.gif)
